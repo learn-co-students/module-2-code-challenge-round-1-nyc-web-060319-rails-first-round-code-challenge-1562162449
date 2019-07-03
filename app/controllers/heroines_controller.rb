@@ -7,6 +7,9 @@ class HeroinesController < ApplicationController
     @heroine = Heroine.find(params[:id])
   end
 
+  def search
+  end
+
   def new
     @heroine = Heroine.new
   end
