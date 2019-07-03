@@ -3,10 +3,7 @@ class HeroinesController < ApplicationController
     @heroines = Heroine.all
   end
 
-  def show
-    @heroine = Heroine.find(params[:id])
-    @power = Power.find(params[:id])
-  end
+
 
   def new
     @heroine = Heroine.new
@@ -15,6 +12,10 @@ class HeroinesController < ApplicationController
   def create
     @heroine = Heroine.create(heroine_params)
     redirect_to '/heroines'
+  end
+
+  def show
+    @heroine = Heroine.find(params[:id])
   end
 
 

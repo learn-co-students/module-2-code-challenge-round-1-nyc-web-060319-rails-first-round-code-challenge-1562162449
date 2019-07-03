@@ -1,3 +1,11 @@
 <h1> <%= @heroine.name %> </h1><br>
 Supername: <%= @heroine.super_name %> <br>
-Powers: <%= link_to @heroine.power.name, power_path(@power) %>
+Powers: <%= link_to @heroine.power.name, powers_path, method: 'get' %>
+
+<!-- right now, i just have a link to the powers_path which then gives you the ability to click on whatever power is associated with a specific heroine -->
+
+
+
+<!-- for link of power was thinking to do  -->
+<!-- link_to @heroine.power.name, power_path(@power) -->
+<!--  then defined @power = Power.find(params[:id]) in my show method in the heroines_controller, but then it was picking up weird power_id that did not exist-->
