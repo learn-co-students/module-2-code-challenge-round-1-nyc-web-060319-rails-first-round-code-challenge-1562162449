@@ -5,13 +5,13 @@
 
 # 4. The power show page should have its name and description. YES
 
-# 5. As a visitor to the website, I should be able to create a new heroine with her name and super name.
+# 5. As a visitor to the website, I should be able to create a new heroine with her name and super name. YES
 
-# 6. The form should also allow each heroine to be created with **only one of the existing powers**.
+# 6. The form should also allow each heroine to be created with **only one of the existing powers**. YES
 
 #   ![A form for adding a new heroine](new_heroine_form.gif)
 
-# 7. Make sure no two heroines have the same super name.
+# 7. Make sure no two heroines have the same super name. YES
 
 
 #HEROINE ATTRIUTES
@@ -39,30 +39,31 @@ class HeroinesController < ApplicationController
     end
   end
   
-  def edit
-    @heroine = Heroine.find(paramss[:id])
-  end
+  # def edit
+  #   @heroine = Heroine.find(params[:id])
+  # end
   
-  def update
-    @heroine = Heroine.find(params[:id])
-    if @heroine.valid?
-      @heroine.update(heroine_params)
-      redirect_to heroine_path(@heroine)
-    else
-      @heroine.errors.full_messages
-      render "new"
-    end
-  end
+  #Ignore this, didn't read README beforehand
+  # def update
+  #   @heroine = Heroine.find(params[:id])
+  #   if @heroine.valid?
+  #     @heroine.update(heroine_params)
+  #     redirect_to heroine_path(@heroine)
+  #   else
+  #     @heroine.errors.full_messages
+  #     render "new"
+  #   end
+  # end
   
   def show
     @heroine = Heroine.find(params[:id])
   end
   
-  def destroy
-    heroine = Heroine.find(params[:id])
-    heroine.destroy
-    redirect_to heroines_path
-  end
+  # def destroy
+  #   heroine = Heroine.find(params[:id])
+  #   heroine.destroy
+  #   redirect_to heroines_path
+  # end
 
   private
   def heroine_params
