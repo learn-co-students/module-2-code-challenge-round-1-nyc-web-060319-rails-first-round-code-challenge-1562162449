@@ -1,0 +1,19 @@
+<h1>Create a Heroine!</h1>
+
+<% if @heroine.errors.any? %>
+    <h3>Your heroine could not be saved because of <%= pluralize(@heroine.errors.count, "error") %>.</h3>
+    <ul>
+    <% @heroine.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+    <% end %>
+    </ul>
+<% end %>
+
+<%= form_for @heroine do |f| %>
+    <%= f.label "Name:" %>
+    <%= f.text_field :name %> <br>
+    <%= f.label "Super Name:" %>
+    <%= f.text_field :super_name %> <br>
+    <%= f.collection_select(:power_id, Power.all, :id, :name, prompt: 'Please select a power') %> <br>
+    <%= f.submit "Create your heroine!" %>
+<% end %>
