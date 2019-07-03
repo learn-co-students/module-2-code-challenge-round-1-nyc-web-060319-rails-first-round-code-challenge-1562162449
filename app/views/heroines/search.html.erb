@@ -1,0 +1,18 @@
+<% if @power.present?%>
+  <h2>Heroines with power: <%= @power.name %></h2>
+  <%= form_tag("/heroines/search", method: "get") do %>
+    <%= label_tag(:q, "Search again:") %>
+    <%= text_field_tag(:q) %>
+    <%= submit_tag("Search") %>
+  <% end %>
+  <ul>
+    <% @heroines.each do |heroine| %>
+      <li>
+        <%= link_to heroine.super_name, heroine_path(heroine) %>
+      </li>
+      <br>
+    <% end %>
+  </ul>
+<% else%>
+  <h2>No heroines with that power</h2>
+<% end%>
