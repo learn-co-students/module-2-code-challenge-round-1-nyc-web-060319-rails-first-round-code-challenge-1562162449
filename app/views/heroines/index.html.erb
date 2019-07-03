@@ -1,9 +1,7 @@
-<%= form_for @heroine do |f|%>
-<%= f.collection_select :power_id, Power.all, :id, :name, prompt: true %>
-<%= f.submit %>
-<%end%>
-
-
+<%#form_for :url => url_for(:controller => 'heroines_controller', :action => 'filter'), method: "post" do |f|%>
+<%#f.collection_select :input, Power.all, :id, :name, prompt: true %>
+<%# f.submit %>
+<%#end%>
 <h2>All Heroines</h2>
 
 <ul>

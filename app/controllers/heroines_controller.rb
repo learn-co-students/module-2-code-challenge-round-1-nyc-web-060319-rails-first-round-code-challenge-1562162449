@@ -1,6 +1,11 @@
 class HeroinesController < ApplicationController
   def index
     @heroines = Heroine.all
+    # @required_power =
+  end
+
+  def filter
+    redirect_to :index
   end
 
   def new
