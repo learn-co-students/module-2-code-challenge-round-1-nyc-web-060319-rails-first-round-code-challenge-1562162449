@@ -8,6 +8,7 @@ class HeroinesController < ApplicationController
   end
 
   def create
+    # I tried using strong params, it kept giving me error
     @heroine = Heroine.create(name: params[:heroine][:name], super_name: params[:heroine][:super_name], power_id: params[:heroine][:power_id])
     if @heroine.valid?
       @heroine.save
