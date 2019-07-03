@@ -1,3 +1,9 @@
+<%= form_for @heroine do |f|%>
+<%= f.collection_select :power_id, Power.all, :id, :name, prompt: true %>
+<%= f.submit %>
+<%end%>
+
+
 <h2>All Heroines</h2>
 
 <ul>
