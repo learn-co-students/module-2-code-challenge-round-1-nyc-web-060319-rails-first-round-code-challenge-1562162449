@@ -1,1 +1,8 @@
-<h1>Here is the page for <%=@power.name %></h1>
+<h1>Here is the page for <u><%=@power.name.capitalize %></u></h1>
+
+
+<ul>
+    <li><u>Name:</u>   <%=@power.name.capitalize%></li>
+    <li><u>Description:</u>   "<%=@power.description.capitalize%>"</li>
+    
+</ul>
