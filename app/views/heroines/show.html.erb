@@ -1,6 +1,7 @@
 <h1> <%= @heroine.name %> </h1><br>
 Supername: <%= @heroine.super_name %> <br>
-Powers: <%= link_to @heroine.power.name, powers_path, method: 'get' %>
+Power_id: <%= @heroine.power_id %> <br>
+Powers: <%= link_to @heroine.power.name, power_path(@power), method: 'get' %>
 
 <!-- right now, i just have a link to the powers_path which then gives you the ability to click on whatever power is associated with a specific heroine -->
 

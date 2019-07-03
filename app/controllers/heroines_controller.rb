@@ -10,12 +10,19 @@ class HeroinesController < ApplicationController
   end
 
   def create
-    @heroine = Heroine.create(heroine_params)
-    redirect_to '/heroines'
+    @heroine = Heroine.new(heroine_params)
+    if @heroine.valid?
+      @heroine.save
+      redirect_to heroines_path
+    else
+      @put= @heroine.errors.full_messages
+      render :new
+    end
   end
 
   def show
     @heroine = Heroine.find(params[:id])
+    @power = Heroine.find_by(params[:power_id])
   end
 
 
