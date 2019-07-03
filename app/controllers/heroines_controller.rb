@@ -13,8 +13,12 @@ class HeroinesController < ApplicationController
 
   def create
     @heroine = Heroine.new(heroine_params)
-    @heroine.save
-    redirect_to heroine_path(@heroine)
+    if @heroine.valid?
+      @heroine.save
+      redirect_to heroine_path(@heroine)
+    else
+      render :new
+    end
   end
 
   private
