@@ -1,0 +1,6 @@
+<%= form_for @heroine do |h| %>
+<%= h.text_field :name %>
+<%= h.text_field :super_name %>
+<%= h.collection_select(:power_id, Power.all, :id, :name, :prompt => 'Select')%>
+<%= h.submit "submit" %>
+<% end %>
