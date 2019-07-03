@@ -17,30 +17,44 @@ class PowersController < ApplicationController
       render "new"
     end
   end
+
+
+  #Ignore this, misread README. I could just delete it.
+  # def edit
+  #   @power = Power.find(paramss[:id])
+  # end
   
-  def edit
-    @power = Power.find(paramss[:id])
-  end
-  
-  def update
-    @power = Power.find(params[:id])
-    if @power.valid?
-      @power.update(power_params)
-      redirect_to power_path(@power)
-    else
-      @power.errors.full_messages
-      render "new"
-    end
-  end
+  # def update
+  #   @power = Power.find(params[:id])
+  #   if @power.valid?
+  #     @power.update(power_params)
+  #     redirect_to power_path(@power)
+  #   else
+  #     @power.errors.full_messages
+  #     render "new"
+  #   end
+  # end
   
   def show
     @power = Power.find(params[:id])
   end
   
-  def destroy
-    power = Power.find(params[:id])
-    power.destroy
-    redirect_to powers_path
+  # def destroy
+  #   power = Power.find(params[:id])
+  #   power.destroy
+  #   redirect_to powers_path
+  # end
+
+  def search_for_heroine_by_power
+  end
+
+  def actual_search
+    @power_to_find = params([:power_id])
+    @heroines = Heroine.all
+    @heroines.where(@power_to_find = self.power_id)
+  end
+
+  def display_heroines_with_power
   end
 
   private

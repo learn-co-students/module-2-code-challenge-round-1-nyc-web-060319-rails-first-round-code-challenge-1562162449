@@ -1,0 +1,10 @@
+<!-- <h1>Enter the name of the power you would like to find heroines by</h1>
+
+<%=form_tag powers_path, :method => post%>
+<%=label_tag :power_id, "Power name"%>
+<%= collection_select :power, :heroine, Heroine.all, :id, :name %>
+<%= submit_tag "Search"%> <!--params = {power_id} ?-->
+
+Heroine.where(power_id = whatever) -->
+
+<!-- .heroines.select{|heroine| heroine.power == }  #[#<Heroine1>, #<Heroine2>] -->

@@ -9,8 +9,6 @@
 
 # 6. The form should also allow each heroine to be created with **only one of the existing powers**. YES
 
-#   ![A form for adding a new heroine](new_heroine_form.gif)
-
 # 7. Make sure no two heroines have the same super name. YES
 
 
