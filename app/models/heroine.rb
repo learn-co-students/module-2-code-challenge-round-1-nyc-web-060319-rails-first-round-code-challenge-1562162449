@@ -26,5 +26,10 @@ class Heroine < ApplicationRecord
     
     validates :name, presence: true
     validates :super_name, presence: true
+    validates :super_name, uniqueness: true
     validates :power_id, presence: true
+
+    def get_power_name_by_power_id
+        Power.all.find{|power| power.id == self.power_id}.name.capitalize
+    end
 end
